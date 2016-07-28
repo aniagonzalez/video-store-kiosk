@@ -1,0 +1,16 @@
+h1 {
+  color: blue;
+}
+
+img {
+  width: 200px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  padding: 1rem;
+}

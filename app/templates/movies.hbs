@@ -1,7 +1,16 @@
 <h2> Movies Available </h2>
 
-<ul>
-  {{#each model as |movie|}}
-    <li>{{movie.title}}</li>
-  {{/each}}
-</ul>
+<div class='container'>
+
+    {{#each model as |movie|}}
+      <div class='movie'>
+        <img src="http://localhost:3000/images/posters/{{movie.poster_filename}}">
+      </div>
+    {{/each}}
+
+</div>
+
+<div class="controls">
+  <button class='prev' id='prev' {{action "getPrev" on="click"}}>Previous</button>
+  <button class='next' id='next' {{action "getNext" on="click"}}>Next</button>
+</div>

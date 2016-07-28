@@ -1,14 +1,22 @@
 import Ember from 'ember';
 //
 export default Ember.Route.extend({
-  model() {
-    return this.store.findAll('movies');
+
+  model(params) {
+    return this.store.query('movies',
+    {
+        page: params.page,
+        size: params.size
+    });
+  },
+
+  queryParams: {
+    page: {
+      refreshModel: true
+    },
+    size: {
+      refreshModel: true
+    }
   }
+
 });
-
-
-// export default Ember.Route.extend({
-//   model: function(params) {
-//     return this.store.find('movies', 88);
-//   }
-// });
